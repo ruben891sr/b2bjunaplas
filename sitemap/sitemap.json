@@ -1,9 +1,7 @@
 {
-  "urlset": {
-    "url": [
-      {
-        "loc": "https://storetheme.vtex.com/about-us"
-      }
-    ]
-  }
+    "urlset": {
+        "url": [{
+            "loc": "https://storetheme.vtex.com/about-us"
+        }]
+    }
 }
