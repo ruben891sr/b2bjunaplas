@@ -1,0 +1,237 @@
+/* Blocks can be defined both on the store/blocks.json file, and in any number of json
+ * files inside the store/blocks directory, with any arbitrary directory structure.
+ *
+ * Additionally, all blocks files can support comments, such as this one, if given the
+ * .jsonc file extension.
+ *
+ * The store/blocks.json file is intended for backwards compatibility, for miscellaneous
+ * blocks, or if the app is simple enough that it doesn't warrant splitting the file.
+ */
+{
+  "store.orderplaced": {
+    "blocks": [ "order-placed" ]
+  },
+
+  "store.account": {
+    "blocks": [ "my-account" ],
+    "parent": {
+      "challenge": "challenge.trade-policy-condition"
+    }
+  },
+
+  "store.login": {
+    "blocks": [ "login-content#default" ]
+  },
+  "login": {
+    "props": {
+      "isInitialScreenOptionOnly": false,
+      "defaultOption": 1,
+      "showPasswordVerificationIntoTooltip": true
+    }
+  },
+
+  "login-content#default": {
+    "props": {
+      "isInitialScreenOptionOnly": false,
+      "defaultOption": 1,
+      "showPasswordVerificationIntoTooltip": true
+    }
+  },
+
+  "product-summary.shelf#default": {
+    "children": [
+      "product-summary-name",
+      "stack-layout#prodsum",
+      "product-summary-space",
+      "challenge-block#mostra-precos"
+    ]
+  },
+
+  "challenge-block#mostra-precos": {
+    "blocks": [
+      "challenge-content#mostra-precos"
+    ]
+  },
+
+  "challenge-content#mostra-precos": {
+    "children": [
+      "challenge-permission#mostra-precos"
+    ]
+  },
+
+  "challenge-permission#mostra-precos": {
+    "blocks": [
+      "allowed-content#mostra-precos",
+      "disallowed-content#price"
+    ]
+  },
+
+  "disallowed-content#price": {
+    "children": []
+  },
+
+  "allowed-content#mostra-precos": {
+    "children": [
+      "flex-layout.col#product"
+    ]
+  },
+
+  "flex-layout.col#product": {
+    "children": [
+      "product-summary-space",
+      "flex-layout.row#selling-price-savings",
+      "product-installments#summary",
+      "add-to-cart-button",
+      "responsive-layout.desktop"
+    ],
+    "props": {
+      "marginTop": 10,
+      "rowGap": "3"
+    }
+  },
+  "responsive-layout.desktop": {
+    "children": ["product-comparison-block.selector"]
+  },
+
+  "add-to-cart-button": {
+    "props": {
+      "text": "Buy",
+      "marginTop": 4,
+      "marginBottom": 7
+    }
+  },
+
+  "product-summary-buy-button": {
+    "props": {
+      "isOneClickBuy": false,
+      "buyButtonText": "See more",
+      "buyButtonBehavior": "alwaysGoToProduct"
+    }
+  },
+
+  "product-summary-image#shelf": {
+    "props": {
+      "showBadge": false,
+      "aspectRatio": "1:1",
+      "maxHeight": 220
+    }
+  },
+
+  "stack-layout#prodsum": {
+    "children": [
+      "product-summary-image#shelf",
+      "modal-trigger#quickview"
+    ]
+  },
+
+  "product-summary-specification-badges": {
+    "props": {
+      "specificationGroupName": "Group",
+      "specificationName": "On Sale",
+      "visibleWhen": "True",
+      "displayValue": "SPECIFICATION_NAME"
+    }
+  },
+
+  "store.product-review-form": {
+    "blocks": [ "product-review-form" ]
+  },
+
+  "store.not-found#product": {
+    "blocks": [ "rich-text#not-found" ],
+    "parent": {
+      "challenge": "challenge.trade-policy-condition"
+    }
+  },
+
+  "rich-text#not-found": {
+    "props": {
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "text": "**PAGE NOT FOUND**",
+      "font": "t-heading-1"
+    }
+  },
+
+  "store.not-found#search": {
+    "blocks": [ "rich-text#not-found" ]
+  },
+
+  "challenge.trade-policy-condition": {
+    "props": {
+      "redirectPath": "/registration"
+    }
+  },
+
+  "order-config#header": {
+      "children": [
+        "flex-layout.row#order-config"
+      ],
+      "props": {
+        "blockClass": "header",
+        "fullWidth":true,
+        "formFields": [
+          {
+            "name": "orderType",
+            "type": "string",
+            "fieldType": "radio",
+            "label": "Order Type",
+            "defaultValue": "res",
+            "options": [
+              {
+                "label": "Resale",
+                "value": "res"
+              },
+              {
+                "label": "Consumption",
+                "value": "cons"
+              }
+            ]
+          },
+          {
+            "name": "state",
+            "type": "string",
+            "fieldType": "select",
+            "label": "State",
+            "showInTitle": true,
+            "options": [
+              {
+                "label": "ES",
+                "value": "ES"
+              },
+              {
+                "label": "SP",
+                "value": "SP"
+              },
+              {
+                "label": "RJ",
+                "value": "RJ"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "flex-layout.row#order-config":{
+      "children": [
+        "order-config.title#header",
+        "order-config.modal#header"
+      ],
+      "props":{
+        "colSizing":"auto"
+      }
+    },
+
+    "order-config.modal#header": {
+      "children": [
+        "order-config.form"
+      ]
+    },
+    "order-config.title#header": {
+      "props": {
+        "formTitle": "Order Configuration:"
+      }
+    }
+
+
+}

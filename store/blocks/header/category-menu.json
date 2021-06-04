@@ -1,0 +1,104 @@
+{
+  "vtex.menu@2.x:menu#category-menu": {
+    "props": {
+      "experimentalOptimizeRendering": true
+    },
+    "children": [
+      "menu-item#category-computers",
+      "menu-item#category-home-appliance",
+      "menu-item#category-machines",
+      "menu-item#category-personalized",
+      "menu-item#category-tools"
+    ]
+  },
+  "menu-item#category-home-appliance": {
+    "props": {
+      "id": "menu-item-category-home-appliance",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/home-appliance",
+        "noFollow": false,
+        "tagTitle": "Home Appliance",
+        "text": "Home Appliance"
+      }
+    }
+  },
+  "menu-item#category-computers": {
+    "props": {
+      "id": "menu-item-category-computers",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/Computers",
+        "noFollow": false,
+        "tagTitle": "Computers",
+        "text": "Computers"
+      }
+    }
+  },
+  "menu-item#category-machines": {
+    "props": {
+      "id": "menu-item-category-machines",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/champion-tools",
+        "noFollow": false,
+        "tagTitle": "Machines",
+        "text": "Machines"
+      }
+    }
+  },
+  "menu-item#category-personalized": {
+    "props": {
+      "id": "menu-item-category-personalized",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/software",
+        "noFollow": false,
+        "tagTitle": "Personalized",
+        "text": "Personalized"
+      }
+    }
+  },
+  "menu-item#category-tools": {
+    "props": {
+      "id": "menu-item-category-tools",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/tools",
+        "noFollow": false,
+        "tagTitle": "Tools",
+        "text": "Tools"
+      }
+    }
+  },
+  "menu-item#about-us": {
+    "props": {
+      "id": "menu-item-about-us",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/about-us",
+        "noFollow": true,
+        "tagTitle": "About us",
+        "text": "About us"
+      }
+    }
+  }
+}
